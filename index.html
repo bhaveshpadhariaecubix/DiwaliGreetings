@@ -3,10 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diwali Greetings</title>
+    <title>Happy Diwali Ecubix Family</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ff9900;
+            margin-bottom: 20px;
+        }
+        video {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        audio {
+            margin-top: 20px;
+            display: block;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Diwali Greetings!</h1>
-    <p>This is a sample static page for your GitHub Pages site.</p>
+    <h1>Happy Diwali Ecubix Family</h1>
+
+    <!-- Video Display -->
+    <video id="diwaliVideo" autoplay muted controls>
+        <source src="8627312-hd_1920_1080_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Audio will play here -->
+    <audio id="audio" autoplay controls>
+        <source src="diwali_greeting.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- Play random greeting button -->
+    <button id="playButton">Play</button>
+
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            // Update the audio source
+            var audio = document.getElementById('audio');
+            audio.src = 'random_greeting.mp3';
+            audio.play(); // Play the new audio
+        });
+
+        // Play a random greeting when the video starts
+        document.getElementById('diwaliVideo').addEventListener('play', function() {
+            var audio = document.getElementById('audio');
+            audio.src = 'random_greeting.mp3';
+            audio.play(); // Play the random greeting
+        });
+    </script>
 </body>
 </html>
