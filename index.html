@@ -6,19 +6,20 @@
     <title>Happy Diwali Ecubix Family</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Helvetica', sans-serif;
+            background-color: #fff3e0; /* Light Diwali-themed background */
             margin: 0;
             padding: 20px;
             text-align: center;
         }
         h1 {
-            color: #ff9900;
+            color: #ff6f00; /* Bright Orange for Diwali */
+            font-size: 2.5rem;
             margin-bottom: 20px;
         }
         video {
             width: 100%;
-            max-width: 640px;
+            max-width: 800px; /* Larger max width for larger screens */
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -26,15 +27,66 @@
         audio {
             margin-top: 20px;
             display: block;
+            width: 100%;
+            max-width: 500px;
         }
         button {
             margin-top: 20px;
-            background-color: #ff9900;
+            background-color: #ff6f00; /* Orange button */
             color: white;
             border: none;
             border-radius: 5px;
-            padding: 10px 15px;
+            padding: 12px 20px;
             cursor: pointer;
+            font-size: 1.2rem;
+        }
+        button:hover {
+            background-color: #e65100; /* Darker orange for hover */
+        }
+
+        /* Make the layout responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            video {
+                max-width: 600px;
+            }
+            button {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            video {
+                max-width: 100%;
+            }
+            button {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+        }
+
+        /* Add Diwali special colors */
+        body {
+            background-image: url('https://i.imgur.com/pdR9I4l.jpg'); /* Festive background */
+            background-size: cover;
+            background-position: center;
+        }
+        h1 {
+            font-family: 'Brush Script MT', cursive; /* A festive, elegant font */
+            text-shadow: 2px 2px 4px #e65100; /* Diwali-themed shadow */
+        }
+        button {
+            background-color: #ffab00; /* Gold button */
+            color: #311b92; /* Dark purple text */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+        }
+        button:hover {
+            background-color: #ff6f00; /* Bright orange on hover */
         }
     </style>
 </head>
@@ -54,7 +106,7 @@
     </audio>
 
     <!-- Play random greeting button -->
-    <button id="playButton">Play</button>
+    <button id="playButton">Play Random Greeting</button>
 
     <script>
         // Array of audio files
